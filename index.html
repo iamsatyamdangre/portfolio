@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satyam Dangre's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #00d4ff;
+        }
+
+        /* Hero Section */
+        #hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('hero-bg.jpg') center/cover no-repeat;
+            position: relative;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-text {
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+        }
+
+        .hero-text p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .hero-text .btn {
+            display: inline-block;
+            background-color: #00d4ff;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-text .btn:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        p, li {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skill {
+            flex: 1;
+            min-width: 150px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .skill i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Projects Section */
+        #projects .project {
+            margin: 20px 0;
+        }
+
+        #projects .project img {
+            width: 100%;
+            border-radius: 12px;
+            max-width: 400px;
+        }
+
+        #projects .project:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            backdrop-filter: blur(5px);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #00d4ff;
+            color: #333;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #007bff;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .socials {
+            margin: 20px 0;
+        }
+
+        .socials a {
+            margin: 0 10px;
+            color: #fff;
+            font-size: 2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .socials a:hover {
+            color: #00d4ff;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-text">
+            <h1>Hi, I'm Satyam Dangre</h1>
+            <p>Engineering Student | Full Stack Developer</p>
+            <a href="#projects" class="btn">See My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="glass">
+        <h2>About Me</h2>
+        <p>I'm an engineering student and a passionate full-stack developer with a knack for building robust web applications. I have experience in technologies like HTML, CSS, Java, Hibernate, MySQL, and Spring Boot. I'm constantly learning and exploring new tools to improve my skills and bring creative ideas to life.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="glass">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <i class="fab fa-html5"></i>
+                <p>HTML</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-css3-alt"></i>
+                <p>CSS</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-java"></i>
+                <p>Java Programming</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-database"></i>
+                <p>MySQL</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-cubes"></i>
+                <p>Hibernate</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-leaf"></i>
+                <p>Spring/Spring Boot</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="glass">
+        <h2>Projects</h2>
+        
+        <div class="project">
+            <h3>Employee Management System (JDBC)</h3>
+            <p>A complete Employee Management System developed using JDBC, MySQL, HTML, and CSS. The system allows efficient management of employee records, including adding, updating, and deleting employees from a centralized database using a simple and clean web interface.</p>
+        </div>
+        
+        <div class="project">
+            <h3>Employee Management System (Hibernate)</h3>
+            <p>Another version of the Employee Management System built with Hibernate ORM, MySQL, HTML, and CSS. This project improves the JDBC version by introducing ORM capabilities for managing database records more efficiently and handling complex queries with ease.</p>
+        </div>
+
+        <div class="project">
+            <h3>Sorting Visualizer</h3>
+            <p>A Sorting Visualizer built using HTML, CSS, and JavaScript that allows users to visually understand how different sorting algorithms (Bubble Sort, Quick Sort, etc.) work. This interactive project visually displays how data is sorted step-by-step, providing an educational experience.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="glass">
+        <h2>Contact Me</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <textarea rows="5" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <!-- Social Links -->
+        <div class="socials">
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Satyam Dangre | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
